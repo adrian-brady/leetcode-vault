@@ -9,7 +9,7 @@ import "fmt"
 func twoSum(nums []int, target int) []int {
 	m := make(map[int]int)
 	for i, v := range nums {
-		if v, ok := m[v]; ok {
+		if _, ok := m[v]; ok {
 			return []int{m[v], i}
 		}
 
@@ -20,7 +20,9 @@ func twoSum(nums []int, target int) []int {
 }
 
 func main() {
-	test := []int{2, 7, 11, 15}
-	ans := twoSum(test, 9)
+	// test := []int{2, 7, 11, 15}
+	// ans := twoSum(test, 9)
+	test := []int{3, 2, 4}
+	ans := twoSum(test, 6)
 	fmt.Printf("%+v\n", ans)
 }
